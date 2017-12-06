@@ -1,7 +1,7 @@
 # Imagen creada desde openjdk8, ver en
 # https://hub.docker.com/_/openjdk/
 # ejecute el comando sudo docker pull openjdk:8
-FROM openjdk:8
+FROM vacax/sdkman-java-gradle:latest
 
 #Indicando quien mantiene la imagen
 MAINTAINER Carlos Camacho <ca.camacho@ce.pucmm.edu.do>
@@ -25,6 +25,8 @@ WORKDIR /opt/spark
 #indicando que voy a publicar el puerto
 EXPOSE 4567
 
+ENV JAVA_HOME /root/.sdkman/candidates/java/8u152-zulu/
+
 #cuando se inicialice el contenedor se ejecuta el comando
 #para crear la imagen es con el comando
 #sudo docker build -t vacax/docker-sparkjava .
@@ -32,7 +34,7 @@ EXPOSE 4567
 #para inicializar el contenedor:
 #sudo docker run -d -p 4567:4567 vacax/docker-sparkjava
 #Cada vez que creemos el contenedor estaremos descargando gradle
-ENTRYPOINT sh gradlew run
+ENTRYPOINT ["/root/.sdkman/candidates/gradle/4.3.1/bin/gradle", "run"]
 
 #para subir al repositorio realizo el push
 # debo logearme primero
