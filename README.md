@@ -1,6 +1,6 @@
 # Proyecto Demo sobre SparkJava y Docker
 
-
+Utiliza Gradle para la generación del archivo jar e inicializa su ejecución.
 Para ejecutar utilice los siguientes comandos:
 
 1) docker build -t nombre-imagen .

@@ -37,7 +37,12 @@ ENV JAVA_HOME /root/.sdkman/candidates/java/8u152-zulu/
 #Cada vez que creemos el contenedor estaremos descargando gradle
 ENTRYPOINT ["/root/.sdkman/candidates/gradle/4.3.1/bin/gradle", "run"]
 
-#para subir al repositorio realizo el push
+# Para subir al repositorio realizo el push
 # debo logearme primero
-#docker login -u usuario
-#sudo docker push vacax/docker-sparkjava
+# docker login -u usuario
+# se etiqueta la imagen y luego hacemos el push
+# sudo docker tag nombre_imagen_local id_usuario/nombre_a_subir
+# sudo docker push id_usuario/nombre_a_subir
+# Ejemplo:
+# sudo docker tag docker-sparkjava vacax/docker-sparkjava
+# sudo docker push vacax/docker-sparkjava
