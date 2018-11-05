@@ -4,7 +4,8 @@
 FROM vacax/sdkman-java-gradle:latest
 
 #Indicando quien mantiene la imagen
-MAINTAINER Carlos Camacho <ca.camacho@ce.pucmm.edu.do>
+#MAINTAINER Carlos Camacho <ca.camacho@ce.pucmm.edu.do> #Obsoleto
+LABEL maintainer="Carlos Camacho <ca.camacho@ce.pucmm.edu.do>"
 
 #actualizando el sistema e instalando gradle
 #el comando RUN ejecuta un comando.
